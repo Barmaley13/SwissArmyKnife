@@ -64,7 +64,7 @@ class DatabaseEntry(object):
         """ Loads main with defaults """
         # LOGGER.debug("type(defaults) = " + str(type(self._defaults)))
 
-        if type(self._defaults) == type(self._main):
+        if type(self._defaults) is type(self._main):
             # LOGGER.debug("Deep Copy")
             defaults = copy.deepcopy(self._defaults)
         else:
