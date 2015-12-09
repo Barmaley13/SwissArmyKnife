@@ -4,8 +4,7 @@ Script for generating package distribution
 
 Used quite a few recipes from here:
 https://wiki.python.org/moin/Distutils/Cookbook
-Some hints on how to extend commands
-http://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345#1321345
+
 """
 
 
@@ -17,10 +16,8 @@ import shutil
 import glob
 
 from distutils.core import setup
-from distutils.command.install_data import install_data
 
 from py_knife import __version__
-from py_knife import file_system
 
 
 ### CONSTANTS ###
@@ -84,6 +81,8 @@ def _generate_docs(doc_packages):
     """
     Generates documentation. Performed before generating distribution on host (Windows) system.
     """
+    from py_knife import file_system
+
     print "*** Generating Documentation ***"
     # Set current working directory
     cwd = sys.path[0]
@@ -113,15 +112,6 @@ def _generate_docs(doc_packages):
     os.system('sphinx-build -b html _docs docs')
 
 
-### CLASSES ###
-class MyInstallData(install_data):
-    def run(self):
-        # need to change self.install_dir to the library dir
-        install_cmd = self.get_finalized_command('install')
-        self.install_dir = getattr(install_cmd, 'install_lib')
-        return install_data.run(self)
-
-
 ### SETUP PROCEDURES ###
 packages = find_packages(".", "")
 # print "packages = ", str(packages), "\n"
@@ -134,11 +124,9 @@ if len(sys.argv):
         # Enable force to overwrite existing files and create folders
         if '--force' not in sys.argv:
             sys.argv.append('--force')
-        if '--single-version-externally-managed' in sys.argv:
-            sys.argv.remove('--single-version-externally-managed')
 
 # Probably none, kept for future reference
-data_files = (non_python_files('vmware_backup'))
+data_files = (non_python_files('py_knife'))
 # print "data_files = ", str(data_files), "\n"
 
 package_data_content = package_data_files('docs')
@@ -158,6 +146,8 @@ setup(
     package_dir=packages,
     package_data=package_data,
     data_files=data_files,
-    cmdclass={'install_data': MyInstallData},
-    requires=[]
+    requires=[
+        'pyserial',
+        'pycrypto'
+    ]
 )
