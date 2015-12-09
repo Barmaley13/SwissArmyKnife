@@ -1,5 +1,11 @@
 """
 Logger Class
+
+To use logger simply::
+
+    import sys
+    sys.stdout = Logger(log_file_path)
+
 """
 
 
