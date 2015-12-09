@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Swiss Army Knife &mdash; Swiss Army Knife 0.01.01 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.01.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Swiss Army Knife 0.01.01 documentation" href="index.html" />
+    <link rel="next" title="Some Images describing Swiss Army Knife code structure" href="images.html" />
+    <link rel="prev" title="Welcome to Swiss Army Knife’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="images.html" title="Some Images describing Swiss Army Knife code structure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Swiss Army Knife’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Swiss Army Knife 0.01.01 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="swiss-army-knife">
+<h1>Swiss Army Knife<a class="headerlink" href="#swiss-army-knife" title="Permalink to this headline">¶</a></h1>
+<p>Swiss Army Knife of Python</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>So, I&#8217;ve been working as a Python Ninja for 3 years now. I&#8217;ve been exposed to multiple projects and I&#8217;ve been noticing
+myself using some of the code over and over on some of the projects. And I&#8217;ve been copy/pasting things until I said
+enough, lets create a package! Because that is the essence of good code writing practice!</p>
+<blockquote>
+<div><ul class="simple">
+<li>KISS - Keep It Simple, Stupid!!!</li>
+<li>DRY - Do not Repeat Yourself!!!</li>
+</ul>
+</div></blockquote>
+<p>We know those all too well...
+Anyway, this package includes mostly functions that I&#8217;ve been using all over the place. I&#8217;m pretty sure you can find
+tremendous value out of this if you take time to go over the package content.</p>
+<p>To be honest, a lot of those have been taking directly from Stack Overflow and slightly modified and placed in the
+nicer wrapper. That is it. It has been open source before this package, now it is open source in one convenient place.</p>
+</div>
+<div class="section" id="package-content">
+<h2>Package Content<a class="headerlink" href="#package-content" title="Permalink to this headline">¶</a></h2>
+<p>This package contains modules providing following functionality (ordered in alphabetical order using module names):</p>
+<blockquote>
+<div><ul>
+<li><p class="first">AES Functions</p>
+</li>
+<li><p class="first">Serial(COM) Port Functions</p>
+</li>
+<li><p class="first">Database Classes</p>
+</li>
+<li><p class="first">Decorator Classes</p>
+</li>
+<li><p class="first">File System Functions</p>
+<blockquote>
+<div><ul class="simple">
+<li>File Manipulation Functions</li>
+<li>Directory Manipulation Functions</li>
+<li>File/Folder Memory Space/Size Functions</li>
+<li>Open/Write/Read File Functions</li>
+<li>Time Stamp Functions</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">OrderedDict Class</p>
+</li>
+<li><p class="first">Python Distribution Install Functions</p>
+</li>
+<li><p class="first">Pickle/Unpickle Functions</p>
+</li>
+<li><p class="first">Web Upload Functions</p>
+</li>
+<li><p class="first">Zip Archive Functions</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each module has to be explicitly included.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Basically, you&#8217;ve got 2 options. Either download latest code from Github and execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install
+</pre></div>
+</div>
+<p>Alternatively, install package using pip:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install py_knife
+</pre></div>
+</div>
+<p>During installation, <tt class="docutils literal"><span class="pre">py_knife</span></tt> module will be added to your python site-packages.</p>
+</div>
+<div class="section" id="notes-for-code-developers">
+<h2>Notes for Code Developers<a class="headerlink" href="#notes-for-code-developers" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">py_knife</span></tt> package comes with some documentation. It is mostly self generated from the code itself.
+There are also images giving basic overview as far as package modules and classes. Please let me know, if you end up
+digging through code and willing to extend documentation.</p>
+<p>Following link, parses html pages directly from GitHub. Pretty neat stuff!
+<a class="reference external" href="http://rawgit.com/Barmaley13/SwissArmyKnife/master/docs/index.html">http://rawgit.com/Barmaley13/SwissArmyKnife/master/docs/index.html</a></p>
+</div>
+<div class="section" id="additional-info-and-questions">
+<h2>Additional Info and Questions<a class="headerlink" href="#additional-info-and-questions" title="Permalink to this headline">¶</a></h2>
+<p>Shoot me email at <tt class="docutils literal"><span class="pre">kirill</span> <span class="pre">at</span> <span class="pre">kbelyayev.com</span></tt> if you have any questions, suggestions, improvements, additions and etc.
+I would love to help you get this script going/help you with your project, just hire me as a contractor.
+I might help you free of charge if you contribute to this distribution or ask politely. Beer donations are welcome too!</p>
+<p><strong>Good luck! Happy coding! Now you&#8217;ve got your own Swiss Army Knife of Python!</strong></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Swiss Army Knife</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#package-content">Package Content</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#notes-for-code-developers">Notes for Code Developers</a></li>
+<li><a class="reference internal" href="#additional-info-and-questions">Additional Info and Questions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Swiss Army Knife&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="images.html"
+                        title="next chapter">Some Images describing Swiss Army Knife code structure</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/readme.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="images.html" title="Some Images describing Swiss Army Knife code structure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Swiss Army Knife’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Swiss Army Knife 0.01.01 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Kirill V. Belyayev.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
