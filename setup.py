@@ -18,6 +18,7 @@ import glob
 from distutils.core import setup
 
 from py_knife import __version__
+from py_knife import file_system
 
 
 ### CONSTANTS ###
@@ -81,8 +82,6 @@ def _generate_docs(doc_packages):
     """
     Generates documentation. Performed before generating distribution on host (Windows) system.
     """
-    from py_knife import file_system
-
     print "*** Generating Documentation ***"
     # Set current working directory
     cwd = sys.path[0]
@@ -100,9 +99,11 @@ def _generate_docs(doc_packages):
 
     # Moving images to appropriate folder
     images = glob.glob('*.png')
-    file_system.make_dir('_docs/images/')
-    for image in images:
-        shutil.move(image, '_docs/images/' + image.split('/')[-1])
+    destination_path = os.path.join('_docs', 'images')
+    file_system.make_dir(destination_path)
+    for image_path in images:
+        image_name = os.path.basename(image_path)
+        shutil.move(image_path, os.path.join(destination_path, image_name))
     # Updating automatically generated rst files
     print 'sphinx-apidoc -f -o _docs py_knife'
     os.system('sphinx-apidoc -f -o _docs py_knife')
