@@ -44,6 +44,14 @@ py_knife.file_system module
     :undoc-members:
     :show-inheritance:
 
+py_knife.logger module
+----------------------
+
+.. automodule:: py_knife.logger
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 py_knife.ordered_dict module
 ----------------------------
 

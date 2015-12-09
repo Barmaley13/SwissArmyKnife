@@ -37,6 +37,7 @@ This package contains modules providing following functionality (ordered in alph
         * Open/Write/Read File Functions
         * Time Stamp Functions
 
+    * Logger
     * OrderedDict Class
     * Python Distribution Install Functions
     * Pickle/Unpickle Functions
