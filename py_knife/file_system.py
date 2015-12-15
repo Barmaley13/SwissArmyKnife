@@ -166,23 +166,32 @@ def get_size(path):
     http://stackoverflow.com/questions/1392413/calculating-a-directory-size-using-python
     """
     total_size = 0
-    seen = set()
 
-    for directory_path, directory_names, file_names in os.walk(path):
-        for f in file_names:
-            fp = os.path.join(directory_path, f)
-
-            try:
-                stat = os.stat(fp)
-            except OSError:
-                continue
-
-            if stat.st_ino in seen:
-                continue
-
-            seen.add(stat.st_ino)
-
+    if os.path.isfile(path):
+        try:
+            stat = os.stat(path)
+        except OSError:
+            pass
+        else:
             total_size += stat.st_size
+
+    elif os.path.isdir(path):
+        seen = set()
+        for directory_path, directory_names, file_names in os.walk(path):
+            for f in file_names:
+                fp = os.path.join(directory_path, f)
+
+                try:
+                    stat = os.stat(fp)
+                except OSError:
+                    continue
+
+                if stat.st_ino in seen:
+                    continue
+
+                seen.add(stat.st_ino)
+
+                total_size += stat.st_size
 
     return total_size  # size in bytes
 
