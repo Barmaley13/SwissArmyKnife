@@ -70,6 +70,21 @@ def multiple_attempts(func):
     return _multiple_attempts
 
 
+@simple_decorator
+def time_it(func):
+    """ Decorator to time function execution """
+    def _time_it(*args, **kwargs):
+        start_time = time.time()
+        output = func(*args, **kwargs)
+        end_time = time.time()
+
+        execution_time = end_time - start_time
+
+        return output, execution_time
+
+    return _time_it
+
+
 if __name__ == '__main__':
     """ Test Unit """
     import random
