@@ -49,16 +49,21 @@ def remove_file(file_path):
         os.remove(file_path)
 
 
-def remove_files(files_path):
+def remove_files(files_path, exclude_paths=None):
     """ Removes files, specified by path/filter """
+    if exclude_paths is None:
+        exclude_paths = list()
+
     files = glob.glob(files_path)
     # Remove files first
     for item in files:
-        remove_file(item)
+        if item not in exclude_paths:
+            remove_file(item)
 
     # Remove directories second
     for item in files:
-        remove_dir(item)
+        if item not in exclude_paths:
+            remove_dir(item)
 
 
 def copy_file(source_file, destination_file, permissions=None, dos2unix=True):
