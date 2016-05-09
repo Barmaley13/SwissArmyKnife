@@ -84,11 +84,16 @@ def package_data_files(path):
 def generate_docs(doc_packages):
     """ Generates documentation. Performed before generating distribution on host (Windows) system """
     if len(doc_packages):
-        # Figuring out base package name
-        _base_package_name = doc_packages.keys()[0].split('.')[0]
+        _base_package_names = list()
 
         # Rebuilding package module interconnections and package classes images
         for _package_name, _package_path in doc_packages.items():
+            # Figuring out base package name
+            _base_package_name = _package_name.split('.')[0]
+            if _base_package_name not in _base_package_names:
+                _base_package_names.append(_base_package_name)
+
+            # Rebuild images
             _package_path = _package_path.split(_base_package_name)
             _package_path[0] = ''
             _package_path = _base_package_name.join(_package_path)
@@ -105,9 +110,10 @@ def generate_docs(doc_packages):
             shutil.move(image_path, os.path.join(destination_path, image_name))
 
         # Updating automatically generated rst files
-        apidoc_str = 'sphinx-apidoc -f -o _docs ' + _base_package_name
-        print apidoc_str
-        os.system(apidoc_str)
+        for _base_package_name in _base_package_names:
+            apidoc_str = 'sphinx-apidoc -f -o _docs ' + _base_package_name
+            print apidoc_str
+            os.system(apidoc_str)
 
         # Rebuilding documentation in html format
         file_system.remove_dir('docs')
