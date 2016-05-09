@@ -76,6 +76,14 @@ py_knife.py_install module
     :undoc-members:
     :show-inheritance:
 
+py_knife.py_setup module
+------------------------
+
+.. automodule:: py_knife.py_setup
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 py_knife.upload module
 ----------------------
 

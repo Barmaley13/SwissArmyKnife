@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>py_knife package &mdash; Swiss Army Knife 0.01.10 documentation</title>
+    <title>py_knife package &mdash; Swiss Army Knife 0.01.11 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.01.10',
+        VERSION:     '0.01.11',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Swiss Army Knife 0.01.10 documentation" href="index.html" />
+    <link rel="top" title="Swiss Army Knife 0.01.11 documentation" href="index.html" />
     <link rel="up" title="py_knife" href="modules.html" />
     <link rel="prev" title="py_knife" href="modules.html" /> 
   </head>
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="modules.html" title="py_knife"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Swiss Army Knife 0.01.10 documentation</a> &raquo;</li>
+        <li><a href="index.html">Swiss Army Knife 0.01.11 documentation</a> &raquo;</li>
           <li><a href="modules.html" accesskey="U">py_knife</a> &raquo;</li> 
       </ul>
     </div>  
@@ -525,6 +525,43 @@ In either case, this is followed by:     for k, v in F.items(): od[k] = v</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-py_knife.py_setup">
+<span id="py-knife-py-setup-module"></span><h2>py_knife.py_setup module<a class="headerlink" href="#module-py_knife.py_setup" title="Permalink to this headline">¶</a></h2>
+<p>Python Distribution Package Utilities</p>
+<p>Used quite a few recipes from here:
+<a class="reference external" href="https://wiki.python.org/moin/Distutils/Cookbook">https://wiki.python.org/moin/Distutils/Cookbook</a>
+Some hints on how to extend commands
+<a class="reference external" href="http://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345#1321345">http://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345#1321345</a></p>
+<dl class="function">
+<dt id="py_knife.py_setup.find_packages">
+<tt class="descclassname">py_knife.py_setup.</tt><tt class="descname">find_packages</tt><big>(</big><em>path</em>, <em>base=''</em><big>)</big><a class="headerlink" href="#py_knife.py_setup.find_packages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all packages in path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.generate_docs">
+<tt class="descclassname">py_knife.py_setup.</tt><tt class="descname">generate_docs</tt><big>(</big><em>doc_packages</em><big>)</big><a class="headerlink" href="#py_knife.py_setup.generate_docs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates documentation. Performed before generating distribution on host (Windows) system</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.is_package">
+<tt class="descclassname">py_knife.py_setup.</tt><tt class="descname">is_package</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#py_knife.py_setup.is_package" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.non_python_files">
+<tt class="descclassname">py_knife.py_setup.</tt><tt class="descname">non_python_files</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#py_knife.py_setup.non_python_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all non-python-file file names in path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.package_data_files">
+<tt class="descclassname">py_knife.py_setup.</tt><tt class="descname">package_data_files</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#py_knife.py_setup.package_data_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all file names in path in package data format</p>
+</dd></dl>
+
+</div>
 <div class="section" id="module-py_knife.upload">
 <span id="py-knife-upload-module"></span><h2>py_knife.upload module<a class="headerlink" href="#module-py_knife.upload" title="Permalink to this headline">¶</a></h2>
 <p>Web Upload Functions</p>
@@ -576,6 +613,7 @@ In either case, this is followed by:     for k, v in F.items(): od[k] = v</p>
 <li><a class="reference internal" href="#module-py_knife.ordered_dict">py_knife.ordered_dict module</a></li>
 <li><a class="reference internal" href="#module-py_knife.pickle">py_knife.pickle module</a></li>
 <li><a class="reference internal" href="#module-py_knife.py_install">py_knife.py_install module</a></li>
+<li><a class="reference internal" href="#module-py_knife.py_setup">py_knife.py_setup module</a></li>
 <li><a class="reference internal" href="#module-py_knife.upload">py_knife.upload module</a></li>
 <li><a class="reference internal" href="#module-py_knife.zip">py_knife.zip module</a></li>
 <li><a class="reference internal" href="#module-py_knife">Module contents</a></li>
@@ -620,7 +658,7 @@ In either case, this is followed by:     for k, v in F.items(): od[k] = v</p>
         <li class="right" >
           <a href="modules.html" title="py_knife"
              >previous</a> |</li>
-        <li><a href="index.html">Swiss Army Knife 0.01.10 documentation</a> &raquo;</li>
+        <li><a href="index.html">Swiss Army Knife 0.01.11 documentation</a> &raquo;</li>
           <li><a href="modules.html" >py_knife</a> &raquo;</li> 
       </ul>
     </div>

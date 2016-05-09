@@ -40,6 +40,7 @@ This package contains modules providing following functionality (ordered in alph
     * Logger
     * OrderedDict Class
     * Python Distribution Install Functions
+    * Python Distribution Package Utilities
     * Pickle/Unpickle Functions
     * Web Upload Functions
     * Zip Archive Functions
