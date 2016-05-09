@@ -1,10 +1,6 @@
 # !/usr/bin/env python
 """
-Script for generating package distribution
-
-Used quite a few recipes from here:
-https://wiki.python.org/moin/Distutils/Cookbook
-
+Swiss Army Knife Setup Scripts
 """
 
 
