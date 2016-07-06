@@ -24,6 +24,7 @@ __license__ = 'GPL'
 
 ## Logger ##
 LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.WARNING)
 # LOGGER.setLevel(logging.DEBUG)
 
 
@@ -149,6 +150,10 @@ class DatabaseList(DatabaseEntry):
 
 class DatabaseDictBase(DatabaseEntry):
     """ Some Dictionary Specific Methods """
+    def __init__(self, *args, **kwargs):
+        super(DatabaseDictBase, self).__init__(*args, **kwargs)
+        self.auto_key_creation = True
+
     def update(self, value):
         """ Allows using update method """
         self._main.update(value)
@@ -168,6 +173,21 @@ class DatabaseDictBase(DatabaseEntry):
     def clear(self):
         """ Allows using clear method """
         return self._main.clear()
+
+    ## Overloading Generic Macros ##
+    def __getitem__(self, key):
+        """ Overloading to allow automatic key creation feature """
+        if self.auto_key_creation:
+            if key not in self._main:
+                LOGGER.warning("Warning key '" + str(key) + "' does not exists! Creating one!")
+
+                default_value = None
+                if key in self._defaults:
+                    default_value = self._defaults[key]
+
+                self.__setitem__(key, default_value)
+
+        return super(DatabaseDictBase, self).__getitem__(key)
 
 
 class DatabaseDict(DatabaseDictBase):
