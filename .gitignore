@@ -10,3 +10,6 @@ build/
 
 # Python generated files
 *.pyc
+
+# Windows Thumbs.db files
+Thumbs.db
