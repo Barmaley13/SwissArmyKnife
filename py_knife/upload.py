@@ -14,7 +14,7 @@ __author__ = 'Kirill V. Belyayev'
 __license__ = 'GPL'
 
 ## Read Chunk Size ##
-CHUNK_SIZE = 1024
+CHUNK_SIZE = 512 * 1024         # 0.5 MB
 
 
 ## Logger ##
@@ -42,7 +42,7 @@ def save_upload(upload_folder_path, upload_data):
             else:
                 upload_file.write(data_chunk)
 
-            upload_file.close()
-            output = upload_path
+        upload_file.close()
+        output = upload_path
 
     return output
