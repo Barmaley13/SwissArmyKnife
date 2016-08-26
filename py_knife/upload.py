@@ -13,6 +13,10 @@ import logging
 __author__ = 'Kirill V. Belyayev'
 __license__ = 'GPL'
 
+## Read Chunk Size ##
+CHUNK_SIZE = 1024
+
+
 ## Logger ##
 LOGGER = logging.getLogger(__name__)
 # LOGGER.setLevel(logging.DEBUG)
@@ -30,13 +34,15 @@ def save_upload(upload_folder_path, upload_data):
     except:
         pass
     else:
-        try:
-            # This is dangerous for big files (using RAM)
-            # TODO: Figure out RAM-less alternative upload
-            upload_file.write(upload_data.file.read())
-        except:
-            pass
-        else:
+        while True:
+            data_chunk = upload_data.file.read(CHUNK_SIZE)
+
+            if not data_chunk:
+                break
+            else:
+                upload_file.write(data_chunk)
+
+            upload_file.close()
             output = upload_path
 
     return output
