@@ -68,6 +68,14 @@ py_knife.pickle module
     :undoc-members:
     :show-inheritance:
 
+py_knife.platforms module
+-------------------------
+
+.. automodule:: py_knife.platforms
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 py_knife.py_install module
 --------------------------
 
