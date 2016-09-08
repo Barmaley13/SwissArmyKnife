@@ -19,6 +19,8 @@ import codecs
 import time
 import logging
 
+from distutils.spawn import find_executable
+
 
 ### CONSTANTS ###
 ## Meta Data ##
@@ -87,7 +89,8 @@ def copy_file(source_file, destination_file, permissions=None, dos2unix=True):
         if os.name == 'posix':
             # Convert to unix format
             if dos2unix:
-                os.system('dos2unix ' + destination_file)
+                if find_executable('dos2unix'):
+                    os.system('dos2unix ' + destination_file)
 
             # Add permissions
             if permissions is not None:
