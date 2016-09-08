@@ -42,6 +42,7 @@ This package contains modules providing following functionality (ordered in alph
     * Python Distribution Install Functions
     * Python Distribution Package Utilities
     * Pickle/Unpickle Functions
+    * Current Platform Detection
     * Web Upload Functions
     * Zip Archive Functions
 
