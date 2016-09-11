@@ -257,7 +257,7 @@ def open_file(file_path, mode, encoding=None):
     return output
 
 
-def save_file(file_path, file_content, encoding=None):
+def save_file(file_path, file_content, encoding=None, permissions=None):
     """ Tries to open file for writing """
     output = False
 
@@ -266,6 +266,11 @@ def save_file(file_path, file_content, encoding=None):
         if write_file(file_instance, file_content):
             output = os.path.basename(file_path)
         file_instance.close()
+
+        if os.name == 'posix':
+            # Add permissions
+            if permissions is not None:
+                os.system('chmod ' + str(permissions) + ' ' + file_path)
 
     return output
 
