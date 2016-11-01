@@ -68,17 +68,17 @@ def non_python_files(path, ignore_dirs=None):
             if os.path.isfile(name) and os.path.splitext(item)[1] not in module_suffixes:
                 result.append(name)
             elif os.path.isdir(name) and item.lower() not in ignore_dirs:
-                all_results.extend(non_python_files(name))
+                all_results.extend(non_python_files(name, ignore_dirs))
         if result:
             all_results.append((path, result))
 
     return all_results
 
 
-def package_data_files(path):
+def package_data_files(path, ignore_dirs=None):
     """ Returns all file names in path in package data format """
     result = []
-    for item in non_python_files(path):
+    for item in non_python_files(path, ignore_dirs):
         result += item[1]
 
     return result
