@@ -163,7 +163,8 @@ def copy_dir(source_path, destination_path):
         for sub_item_path in sub_items:
             sub_item_name = os.path.basename(sub_item_path)
             copy_dir(sub_item_path, os.path.join(destination_path, sub_item_name))
-    else:
+
+    elif os.path.isfile(source_path):
         copy_file(source_path, destination_path)
 
 

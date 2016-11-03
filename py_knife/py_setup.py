@@ -53,29 +53,32 @@ def find_packages(path, base=""):
     return py_packages
 
 
-def non_python_files(path):
+def non_python_files(path, ignore_dirs=None):
     """ Return all non-python-file file names in path """
     result = []
     all_results = []
     module_suffixes = [info[0] for info in imp.get_suffixes()]
-    ignore_dirs = ['cvs']
+
+    if ignore_dirs is None:
+        ignore_dirs = []
+
     if os.path.isdir(path):
         for item in os.listdir(path):
             name = os.path.join(path, item)
             if os.path.isfile(name) and os.path.splitext(item)[1] not in module_suffixes:
                 result.append(name)
             elif os.path.isdir(name) and item.lower() not in ignore_dirs:
-                all_results.extend(non_python_files(name))
+                all_results.extend(non_python_files(name, ignore_dirs))
         if result:
             all_results.append((path, result))
 
     return all_results
 
 
-def package_data_files(path):
+def package_data_files(path, ignore_dirs=None):
     """ Returns all file names in path in package data format """
     result = []
-    for item in non_python_files(path):
+    for item in non_python_files(path, ignore_dirs):
         result += item[1]
 
     return result
