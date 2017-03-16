@@ -153,7 +153,7 @@ class DatabaseDictBase(DatabaseEntry):
     def __init__(self, *args, **kwargs):
         super(DatabaseDictBase, self).__init__(*args, **kwargs)
         self.auto_key_creation = True
-        self.new_entry_defaults = None
+        self.default_value = None
 
     def update(self, value):
         """ Allows using update method """
@@ -188,8 +188,9 @@ class DatabaseDictBase(DatabaseEntry):
 
                 self.__setitem__(key, default_value)
 
-        if key not in self._main and self.new_entry_defaults is not None:
-            return self.new_entry_defaults
+        if key not in self._main and self.default_value is not None:
+            LOGGER.warning("Warning key '" + str(key) + "' does not exists! Providing default value!")
+            return self.default_value
 
         else:
             return super(DatabaseDictBase, self).__getitem__(key)
