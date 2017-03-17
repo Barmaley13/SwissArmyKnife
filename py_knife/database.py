@@ -152,8 +152,8 @@ class DatabaseDictBase(DatabaseEntry):
     """ Some Dictionary Specific Methods """
     def __init__(self, *args, **kwargs):
         super(DatabaseDictBase, self).__init__(*args, **kwargs)
-        self.auto_key_creation = True
         self._default_value = None
+        self.auto_key_creation = True
 
     def update(self, value):
         """ Allows using update method """
@@ -178,8 +178,12 @@ class DatabaseDictBase(DatabaseEntry):
     ## Overloading Generic Macros ##
     def __getitem__(self, key):
         """ Overloading to allow automatic key creation feature """
-        if self.auto_key_creation:
-            if key not in self._main:
+        if key not in self._main:
+            if self._default_value is not None:
+                LOGGER.warning("Warning key '" + str(key) + "' does not exists! Providing default value!")
+                return self._default_value
+
+            if self.auto_key_creation:
                 LOGGER.warning("Warning key '" + str(key) + "' does not exists! Creating one!")
 
                 default_value = None
@@ -188,12 +192,7 @@ class DatabaseDictBase(DatabaseEntry):
 
                 self.__setitem__(key, default_value)
 
-        if key not in self._main and self._default_value is not None:
-            LOGGER.warning("Warning key '" + str(key) + "' does not exists! Providing default value!")
-            return self._default_value
-
-        else:
-            return super(DatabaseDictBase, self).__getitem__(key)
+        return super(DatabaseDictBase, self).__getitem__(key)
 
 
 class DatabaseDict(DatabaseDictBase):
