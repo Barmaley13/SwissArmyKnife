@@ -51,6 +51,8 @@ setup(
     data_files=data_files,
     requires=[
         'pyserial',
-        'pycrypto'
+        'pycrypto',
+        'pylint',
+        'Sphinx'
     ]
 )
