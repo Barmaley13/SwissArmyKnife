@@ -9,12 +9,6 @@ from Crypto.Cipher import AES
 from Crypto import Random
 
 
-### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
-
 ### FUNCTIONS ###
 def encrypt(in_filename, out_filename, password):
     """ External Encrypt function """

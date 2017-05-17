@@ -9,10 +9,6 @@ import logging
 
 
 ### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
 ## Logger ##
 LOGGER = logging.getLogger(__name__)
 # LOGGER.setLevel(logging.DEBUG)

@@ -9,11 +9,8 @@ import logging
 
 from .file_system import remove_dir
 
-### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
 
+### CONSTANTS ###
 ## Logger ##
 LOGGER = logging.getLogger(__name__)
 # LOGGER.setLevel(logging.DEBUG)

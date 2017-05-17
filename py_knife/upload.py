@@ -9,10 +9,6 @@ import logging
 
 
 ### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
 ## Read Chunk Size ##
 CHUNK_SIZE = 512 * 1024         # 0.5 MB
 

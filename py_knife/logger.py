@@ -13,12 +13,6 @@ To use logger simply::
 import sys
 
 
-### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
-
 ### CLASSES ###
 class Logger(object):
     def __init__(self, filename=None):

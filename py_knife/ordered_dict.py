@@ -22,12 +22,6 @@ except ImportError:
     pass
 
 
-### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
-
 ### CLASSES ###
 # noinspection PyDefaultArgument,PyMethodOverriding,PyMissingConstructor,PyPep8,PyRedundantParentheses,PySingleQuotedDocstring,PyTypeChecker,PyUnresolvedReferences
 class OrderedDict(dict):

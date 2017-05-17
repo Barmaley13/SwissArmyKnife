@@ -13,12 +13,6 @@ from py_knife import __version__
 from py_knife.py_setup import find_packages, non_python_files, package_data_files, generate_docs
 
 
-### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
-
 ### SETUP PROCEDURES ###
 packages = find_packages(".", "")
 # print "packages = ", str(packages), "\n"

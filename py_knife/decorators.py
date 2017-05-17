@@ -10,10 +10,6 @@ import time
 
 
 ### CONSTANTS ###
-## Meta Data ##
-__author__ = 'Kirill V. Belyayev'
-__license__ = 'GPL'
-
 ## Multiple Attempt Settings ##
 ATTEMPT_NUMBER = 10
 ATTEMPT_TIMEOUT = 10        # seconds
