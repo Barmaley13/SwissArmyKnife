@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>py_knife package &mdash; Swiss Army Knife 0.01.25 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.01.25',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Swiss Army Knife 0.01.25 documentation" href="index.html" />
+    <link rel="up" title="py_knife" href="modules.html" />
+    <link rel="prev" title="py_knife" href="modules.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="py_knife"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Swiss Army Knife 0.01.25 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">py_knife</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="py-knife-package">
+<h1>py_knife package<a class="headerlink" href="#py-knife-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-py_knife.aes">
+<span id="py-knife-aes-module"></span><h2>py_knife.aes module<a class="headerlink" href="#module-py_knife.aes" title="Permalink to this headline">¶</a></h2>
+<p>AES Encrypt/Decrypt Library</p>
+<dl class="function">
+<dt id="py_knife.aes.decrypt">
+<code class="descclassname">py_knife.aes.</code><code class="descname">decrypt</code><span class="sig-paren">(</span><em>in_filename</em>, <em>out_filename</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.aes.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>External Decrypt function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.aes.encrypt">
+<code class="descclassname">py_knife.aes.</code><code class="descname">encrypt</code><span class="sig-paren">(</span><em>in_filename</em>, <em>out_filename</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.aes.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>External Encrypt function</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.com_port">
+<span id="py-knife-com-port-module"></span><h2>py_knife.com_port module<a class="headerlink" href="#module-py_knife.com_port" title="Permalink to this headline">¶</a></h2>
+<p>Serial(COM) Port Functions</p>
+<dl class="function">
+<dt id="py_knife.com_port.available_ports">
+<code class="descclassname">py_knife.com_port.</code><code class="descname">available_ports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.com_port.available_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of available serial ports</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.database">
+<span id="py-knife-database-module"></span><h2>py_knife.database module<a class="headerlink" href="#module-py_knife.database" title="Permalink to this headline">¶</a></h2>
+<p>Database Classes
+Classes that save/load python content to/from the hard drive(or other means of non-volatile memory).
+Make sure to provide pickle-able data, no objects, classes or anything that might be hard to convert to a string
+Please do not use DatabaseEntry directly, nor DatabaseDictBase. Those are exposed for overloading purposes.
+Use DatabaseList, DatabaseDict or DatabaseOrderedDict!</p>
+<dl class="class">
+<dt id="py_knife.database.DatabaseDict">
+<em class="property">class </em><code class="descclassname">py_knife.database.</code><code class="descname">DatabaseDict</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_knife.database.DatabaseDictBase" title="py_knife.database.DatabaseDictBase"><code class="xref py py-class docutils literal"><span class="pre">py_knife.database.DatabaseDictBase</span></code></a></p>
+<p>DatabaseDict class</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="py_knife.database.DatabaseDictBase">
+<em class="property">class </em><code class="descclassname">py_knife.database.</code><code class="descname">DatabaseDictBase</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDictBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_knife.database.DatabaseEntry" title="py_knife.database.DatabaseEntry"><code class="xref py py-class docutils literal"><span class="pre">py_knife.database.DatabaseEntry</span></code></a></p>
+<p>Some Dictionary Specific Methods</p>
+<dl class="method">
+<dt id="py_knife.database.DatabaseDictBase.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDictBase.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using clear method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseDictBase.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDictBase.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using items method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseDictBase.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDictBase.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using keys method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseDictBase.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDictBase.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using update method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseDictBase.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseDictBase.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using values method</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="py_knife.database.DatabaseEntry">
+<em class="property">class </em><code class="descclassname">py_knife.database.</code><code class="descname">DatabaseEntry</code><span class="sig-paren">(</span><em>entry_data_type</em>, <em>db_file=None</em>, <em>defaults=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>DatabaseEntry class</p>
+<dl class="method">
+<dt id="py_knife.database.DatabaseEntry.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseEntry.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes database file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseEntry.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseEntry.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>External Load</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseEntry.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseEntry.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using pop method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseEntry.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>db_content=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseEntry.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves main to a file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="py_knife.database.DatabaseList">
+<em class="property">class </em><code class="descclassname">py_knife.database.</code><code class="descname">DatabaseList</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_knife.database.DatabaseEntry" title="py_knife.database.DatabaseEntry"><code class="xref py py-class docutils literal"><span class="pre">py_knife.database.DatabaseEntry</span></code></a></p>
+<p>DatabaseList class</p>
+<dl class="method">
+<dt id="py_knife.database.DatabaseList.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseList.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using append method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseList.extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseList.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using extend method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseList.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>index</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseList.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using insert method</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="py_knife.database.DatabaseOrderedDict">
+<em class="property">class </em><code class="descclassname">py_knife.database.</code><code class="descname">DatabaseOrderedDict</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseOrderedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_knife.database.DatabaseDictBase" title="py_knife.database.DatabaseDictBase"><code class="xref py py-class docutils literal"><span class="pre">py_knife.database.DatabaseDictBase</span></code></a></p>
+<p>DatabaseOrderedDict class</p>
+<dl class="method">
+<dt id="py_knife.database.DatabaseOrderedDict.insert_after">
+<code class="descname">insert_after</code><span class="sig-paren">(</span><em>existing_key</em>, <em>key_value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseOrderedDict.insert_after" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using insert_after method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.database.DatabaseOrderedDict.insert_before">
+<code class="descname">insert_before</code><span class="sig-paren">(</span><em>existing_key</em>, <em>key_value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.database.DatabaseOrderedDict.insert_before" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows using insert_before method</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.decorators">
+<span id="py-knife-decorators-module"></span><h2>py_knife.decorators module<a class="headerlink" href="#module-py_knife.decorators" title="Permalink to this headline">¶</a></h2>
+<p>Collection of decorators to make our life a little easier
+Simple Decorator is based on a recipe from here:
+<a class="reference external" href="https://wiki.python.org/moin/PythonDecoratorLibrary">https://wiki.python.org/moin/PythonDecoratorLibrary</a></p>
+<dl class="function">
+<dt id="py_knife.decorators.multiple_attempts">
+<code class="descclassname">py_knife.decorators.</code><code class="descname">multiple_attempts</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.decorators.multiple_attempts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to perform multiple attempts</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.decorators.simple_decorator">
+<code class="descclassname">py_knife.decorators.</code><code class="descname">simple_decorator</code><span class="sig-paren">(</span><em>decorator</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.decorators.simple_decorator" title="Permalink to this definition">¶</a></dt>
+<dd><p>This decorator can be used to turn simple functions
+into well-behaved decorators, so long as the decorators
+are fairly simple. If a decorator expects a function and
+returns a function (no descriptors), and if it doesn&#8217;t
+modify function attributes or docstring, then it is
+eligible to use this. Simply apply &#64;simple_decorator to
+your decorator and it will automatically preserve the
+docstring and function attributes of functions to which
+it is applied.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.decorators.time_it">
+<code class="descclassname">py_knife.decorators.</code><code class="descname">time_it</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.decorators.time_it" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to time function execution</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.file_system">
+<span id="py-knife-file-system-module"></span><h2>py_knife.file_system module<a class="headerlink" href="#module-py_knife.file_system" title="Permalink to this headline">¶</a></h2>
+<p>This module functionality consist of:</p>
+<blockquote>
+<div><ul class="simple">
+<li>File Manipulation Functions</li>
+<li>Directory Manipulation Functions</li>
+<li>File/Folder Memory Space/Size Functions</li>
+<li>Open/Write/Read File Functions</li>
+<li>Time Stamp Functions</li>
+</ul>
+</div></blockquote>
+<dl class="function">
+<dt id="py_knife.file_system.copy_dir">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">copy_dir</code><span class="sig-paren">(</span><em>source_path</em>, <em>destination_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.copy_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.copy_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">copy_file</code><span class="sig-paren">(</span><em>source_file</em>, <em>destination_file</em>, <em>permissions=None</em>, <em>dos2unix=True</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.copy_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copying File
+:param source_file: Source File Path
+:param destination_file: Destination File Path
+:param permissions: Permissions string (for unix only)
+:param dos2unix: Conversion to unix format (for unix only)
+:return: True if copying is successful, False otherwise</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.create_time_stamp">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">create_time_stamp</code><span class="sig-paren">(</span><em>time_stamp_format</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.create_time_stamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.empty_dir">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">empty_dir</code><span class="sig-paren">(</span><em>dir_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.empty_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty directory
+:param dir_path: Path of the directory
+:return: True if empty successful (such directory existed in the first place), False otherwise</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.fetch_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">fetch_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.fetch_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches files, specified by path/filter</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.get_free_space">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">get_free_space</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.get_free_space" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return free space in bytes
+Taken from here, slightly modified:
+<a class="reference external" href="http://stackoverflow.com/questions/51658/cross-platform-space-remaining-on-volume-using-python">http://stackoverflow.com/questions/51658/cross-platform-space-remaining-on-volume-using-python</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.get_size">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">get_size</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Taken from here
+<a class="reference external" href="http://stackoverflow.com/questions/1392413/calculating-a-directory-size-using-python">http://stackoverflow.com/questions/1392413/calculating-a-directory-size-using-python</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.make_dir">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">make_dir</code><span class="sig-paren">(</span><em>dir_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.make_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creating directory
+:param dir_path: Path of the new directory
+:return: True if folder has been created, False if folder exists already</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.make_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">make_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.make_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creating empty file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.open_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">open_file</code><span class="sig-paren">(</span><em>file_path</em>, <em>mode</em>, <em>encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.open_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries reading file. Returns false if failed</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.print_memory_size">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">print_memory_size</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.print_memory_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Taken from here
+<a class="reference external" href="http://stackoverflow.com/questions/1392413/calculating-a-directory-size-using-python">http://stackoverflow.com/questions/1392413/calculating-a-directory-size-using-python</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.remove_dir">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">remove_dir</code><span class="sig-paren">(</span><em>dir_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.remove_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removing directory
+:param dir_path: Path of the directory
+:return: True if remove successful (such directory existed in the first place), False otherwise</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.remove_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">remove_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.remove_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.remove_files">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">remove_files</code><span class="sig-paren">(</span><em>files_path</em>, <em>exclude_paths=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.remove_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes files, specified by path/filter</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.save_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">save_file</code><span class="sig-paren">(</span><em>file_path</em>, <em>file_content</em>, <em>encoding=None</em>, <em>permissions=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.save_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to open file for writing</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.file_system.write_file">
+<code class="descclassname">py_knife.file_system.</code><code class="descname">write_file</code><span class="sig-paren">(</span><em>file_instance</em>, <em>file_content</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.file_system.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries writing file</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.logger">
+<span id="py-knife-logger-module"></span><h2>py_knife.logger module<a class="headerlink" href="#module-py_knife.logger" title="Permalink to this headline">¶</a></h2>
+<p>Logger Class</p>
+<p>To use logger simply:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="py_knife.logger.Logger">
+<em class="property">class </em><code class="descclassname">py_knife.logger.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.logger.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="py_knife.logger.Logger.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.logger.Logger.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.ordered_dict">
+<span id="py-knife-ordered-dict-module"></span><h2>py_knife.ordered_dict module<a class="headerlink" href="#module-py_knife.ordered_dict" title="Permalink to this headline">¶</a></h2>
+<p>Backport of OrderedDict() class that runs on Python 2.4, 2.5, 2.6, 2.7 and pypy.
+Passes Python2.7&#8217;s test suite and incorporates all the latest updates.</p>
+<p>Reference links:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference external" href="http://code.activestate.com/recipes/576693/">http://code.activestate.com/recipes/576693/</a></li>
+<li><a class="reference external" href="https://gist.github.com/jaredks/6276032">https://gist.github.com/jaredks/6276032</a></li>
+</ol>
+</div></blockquote>
+<dl class="class">
+<dt id="py_knife.ordered_dict.OrderedDict">
+<em class="property">class </em><code class="descclassname">py_knife.ordered_dict.</code><code class="descname">OrderedDict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.ordered_dict.OrderedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a></p>
+<p>Dictionary that remembers insertion order</p>
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None.  Remove all items from od.<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a shallow copy of od<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="py_knife.ordered_dict.OrderedDict.fromkeys">
+<em class="property">classmethod </em><code class="descname">fromkeys</code><span class="sig-paren">(</span><em>S</em><span class="optional">[</span>, <em>v</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; New ordered dictionary with keys from S<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>and values equal to v (which defaults to None).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.insert_after">
+<code class="descname">insert_after</code><span class="sig-paren">(</span><em>existing_key</em>, <em>key_value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.insert_after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.insert_before">
+<code class="descname">insert_before</code><span class="sig-paren">(</span><em>existing_key</em>, <em>key_value</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.insert_before" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of (key, value) pairs in od<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd><p>od.iteritems -&gt; an iterator over the (key, value) items in od</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the keys in od<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd><p>od.itervalues -&gt; an iterator over the values in od</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of keys in od<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; v, remove specified key and return the corresponding value.<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; (k, v), return and remove a (key, value) pair.<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pairs are returned in LIFO order if last is true or FIFO order if false.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; od.get(k,d), also set od[k]=d if k not in od<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>E</em>, <em>**F</em><span class="sig-paren">)</span> &rarr; None.  Update od from dict/iterable E and F.<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is a dict instance, does:           for k in E: od[k] = E[k]
+If E has a .keys() method, does:         for k in E.keys(): od[k] = E[k]
+Or if E is an iterable of items, does:   for k, v in E: od[k] = v
+In either case, this is followed by:     for k, v in F.items(): od[k] = v</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of values in od<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.viewitems">
+<code class="descname">viewitems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on od's items<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.viewitems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.viewkeys">
+<code class="descname">viewkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on od's keys<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.viewkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_knife.ordered_dict.OrderedDict.viewvalues">
+<code class="descname">viewvalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an object providing a view on od's values<a class="headerlink" href="#py_knife.ordered_dict.OrderedDict.viewvalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.pickle">
+<span id="py-knife-pickle-module"></span><h2>py_knife.pickle module<a class="headerlink" href="#module-py_knife.pickle" title="Permalink to this headline">¶</a></h2>
+<p>Pickle/Unpickle Functions</p>
+<dl class="function">
+<dt id="py_knife.pickle.pickle_file">
+<code class="descclassname">py_knife.pickle.</code><code class="descname">pickle_file</code><span class="sig-paren">(</span><em>file_path</em>, <em>data_to_pickle</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.pickle.pickle_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pickle file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.pickle.unpickle_file">
+<code class="descclassname">py_knife.pickle.</code><code class="descname">unpickle_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.pickle.unpickle_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpickle file</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.platforms">
+<span id="py-knife-platforms-module"></span><h2>py_knife.platforms module<a class="headerlink" href="#module-py_knife.platforms" title="Permalink to this headline">¶</a></h2>
+<p>Determine current platform
+Uses python platform module to determine if run this script on Windows, MAC, Ubuntu or Debian Linux
+Or &#8216;Raspberry Pi&#8217; or &#8216;Synapse E10&#8217; system</p>
+</div>
+<div class="section" id="module-py_knife.py_install">
+<span id="py-knife-py-install-module"></span><h2>py_knife.py_install module<a class="headerlink" href="#module-py_knife.py_install" title="Permalink to this headline">¶</a></h2>
+<p>Python Distribution Install Functions</p>
+<dl class="function">
+<dt id="py_knife.py_install.install_package">
+<code class="descclassname">py_knife.py_install.</code><code class="descname">install_package</code><span class="sig-paren">(</span><em>package_name</em>, <em>package_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.py_install.install_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs install inside of install</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.py_setup">
+<span id="py-knife-py-setup-module"></span><h2>py_knife.py_setup module<a class="headerlink" href="#module-py_knife.py_setup" title="Permalink to this headline">¶</a></h2>
+<p>Python Distribution Package Utilities</p>
+<p>Used quite a few recipes from here:
+<a class="reference external" href="https://wiki.python.org/moin/Distutils/Cookbook">https://wiki.python.org/moin/Distutils/Cookbook</a>
+Some hints on how to extend commands
+<a class="reference external" href="http://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345#1321345">http://stackoverflow.com/questions/1321270/how-to-extend-distutils-with-a-simple-post-install-script/1321345#1321345</a></p>
+<dl class="function">
+<dt id="py_knife.py_setup.find_packages">
+<code class="descclassname">py_knife.py_setup.</code><code class="descname">find_packages</code><span class="sig-paren">(</span><em>path</em>, <em>base=''</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.py_setup.find_packages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all packages in path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.generate_docs">
+<code class="descclassname">py_knife.py_setup.</code><code class="descname">generate_docs</code><span class="sig-paren">(</span><em>doc_packages</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.py_setup.generate_docs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates documentation. Performed before generating distribution on host (Windows) system</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.is_package">
+<code class="descclassname">py_knife.py_setup.</code><code class="descname">is_package</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.py_setup.is_package" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.non_python_files">
+<code class="descclassname">py_knife.py_setup.</code><code class="descname">non_python_files</code><span class="sig-paren">(</span><em>path</em>, <em>ignore_dirs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.py_setup.non_python_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all non-python-file file names in path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.py_setup.package_data_files">
+<code class="descclassname">py_knife.py_setup.</code><code class="descname">package_data_files</code><span class="sig-paren">(</span><em>path</em>, <em>ignore_dirs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.py_setup.package_data_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all file names in path in package data format</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.upload">
+<span id="py-knife-upload-module"></span><h2>py_knife.upload module<a class="headerlink" href="#module-py_knife.upload" title="Permalink to this headline">¶</a></h2>
+<p>Web Upload Functions</p>
+<dl class="function">
+<dt id="py_knife.upload.save_upload">
+<code class="descclassname">py_knife.upload.</code><code class="descname">save_upload</code><span class="sig-paren">(</span><em>upload_folder_path</em>, <em>upload_data</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.upload.save_upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to open Upload File</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife.zip">
+<span id="py-knife-zip-module"></span><h2>py_knife.zip module<a class="headerlink" href="#module-py_knife.zip" title="Permalink to this headline">¶</a></h2>
+<p>Zip Archive Functions</p>
+<dl class="function">
+<dt id="py_knife.zip.create_zip">
+<code class="descclassname">py_knife.zip.</code><code class="descname">create_zip</code><span class="sig-paren">(</span><em>zip_path</em>, <em>files_path</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.zip.create_zip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates Zip Archive</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_knife.zip.extract_zip">
+<code class="descclassname">py_knife.zip.</code><code class="descname">extract_zip</code><span class="sig-paren">(</span><em>zip_path</em>, <em>extract_path=None</em>, <em>password=None</em><span class="sig-paren">)</span><a class="headerlink" href="#py_knife.zip.extract_zip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens Zip Archive in order to extract files</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_knife">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-py_knife" title="Permalink to this headline">¶</a></h2>
+<p>Swiss Army Knife of Python</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">py_knife package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-py_knife.aes">py_knife.aes module</a></li>
+<li><a class="reference internal" href="#module-py_knife.com_port">py_knife.com_port module</a></li>
+<li><a class="reference internal" href="#module-py_knife.database">py_knife.database module</a></li>
+<li><a class="reference internal" href="#module-py_knife.decorators">py_knife.decorators module</a></li>
+<li><a class="reference internal" href="#module-py_knife.file_system">py_knife.file_system module</a></li>
+<li><a class="reference internal" href="#module-py_knife.logger">py_knife.logger module</a></li>
+<li><a class="reference internal" href="#module-py_knife.ordered_dict">py_knife.ordered_dict module</a></li>
+<li><a class="reference internal" href="#module-py_knife.pickle">py_knife.pickle module</a></li>
+<li><a class="reference internal" href="#module-py_knife.platforms">py_knife.platforms module</a></li>
+<li><a class="reference internal" href="#module-py_knife.py_install">py_knife.py_install module</a></li>
+<li><a class="reference internal" href="#module-py_knife.py_setup">py_knife.py_setup module</a></li>
+<li><a class="reference internal" href="#module-py_knife.upload">py_knife.upload module</a></li>
+<li><a class="reference internal" href="#module-py_knife.zip">py_knife.zip module</a></li>
+<li><a class="reference internal" href="#module-py_knife">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">py_knife</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/py_knife.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="py_knife"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Swiss Army Knife 0.01.25 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >py_knife</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Kirill V. Belyayev.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>
