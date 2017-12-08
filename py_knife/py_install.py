@@ -27,7 +27,7 @@ def install_package(package_name, package_path=None):
         clean_up = True
     os.chdir(package_path)
 
-    print 'Installing ' + package_name + '...'
+    print('Installing {}...'.format(package_name))
     if os.name == 'nt':
         # This failed on E10 as part of web interface install
         install_process = subprocess.Popen(['python', 'setup.py', 'install'], shell=True)
@@ -39,5 +39,5 @@ def install_package(package_name, package_path=None):
     os.chdir(cwd)
 
     if clean_up:
-        print 'Cleaning ' + package_name + ' up...'
+        print('Cleaning {} up...'.format(package_name))
         remove_dir(package_path)

@@ -15,14 +15,14 @@ from py_knife.py_setup import find_packages, non_python_files, package_data_file
 
 ### SETUP PROCEDURES ###
 packages = find_packages(".", "")
-# print "packages = ", str(packages), "\n"
+# print('packages: {}\n'.format(packages))
 
 if len(sys.argv):
     if 'sdist' in sys.argv:
-        print "*** Generating Documentation ***"
+        print('*** Generating Documentation ***')
         generate_docs(packages)
 
-        print "*** Generation Distribution ***"
+        print('*** Generation Distribution ***')
     elif 'install' in sys.argv:
         # Enable force to overwrite existing files and create folders
         if '--force' not in sys.argv:
@@ -30,11 +30,11 @@ if len(sys.argv):
 
 # Probably none, kept for future reference
 data_files = (non_python_files('py_knife'))
-# print "data_files = ", str(data_files), "\n"
+# print('data_files: {}\n'.format(data_files))
 
 package_data_content = package_data_files('docs')
 package_data = {'': package_data_content}
-# print "package_data = ", str(package_data), "\n"
+# print('package_data: {}\n'.format(package_data))
 
 setup(
     name='py_knife',
@@ -53,6 +53,7 @@ setup(
         'pyserial',
         'pycrypto',
         'pylint',
-        'Sphinx'
+        'Sphinx',
+        'serial'
     ]
 )

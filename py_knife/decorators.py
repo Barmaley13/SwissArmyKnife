@@ -93,19 +93,19 @@ if __name__ == '__main__':
         """
         kwargs['success'] = False
 
-        print 'Attempt # ' + str(kwargs['total_attempts'])
+        print('Attempt # {}'.format(kwargs['total_attempts']))
 
         random_number = random.random()
         success_margin = 0.75
         if random_number >= success_margin:
             kwargs['success'] = True
 
-        print 'Random number: ' + str(random_number)
-        print 'Success Margin: ' + str(success_margin)
+        print('Random number: {}'.format(random_number))
+        print('Success Margin: {}'.format(success_margin))
 
         kwargs['output'] = random_number
 
         return kwargs
 
     test_results = test_function()
-    print "Test Results: ", str(test_results)
+    print('Test Results: {}'.format(test_results))

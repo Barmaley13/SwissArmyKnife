@@ -38,7 +38,7 @@ def find_packages(path, base=""):
     for item in os.listdir(path):
         py_dir = os.path.join(path, item)
         if os.path.isdir(py_dir) and is_package(py_dir):
-            # print "item = ", item
+            # print('item: {}'.format(item))
             if base:
                 module_name = "%(base)s.%(item)s" % vars()
             else:
@@ -97,7 +97,7 @@ def generate_docs(doc_packages):
             _package_path[0] = ''
             _package_path = _base_package_name.join(_package_path)
             pyreverse_command = 'pyreverse -o png -p ' + _package_name + ' ' + _package_path
-            print pyreverse_command
+            print(pyreverse_command)
             os.system(pyreverse_command)
 
         # Moving images to appropriate folder
@@ -111,11 +111,11 @@ def generate_docs(doc_packages):
         # Updating automatically generated rst files
         for _base_package_name in _base_package_names:
             apidoc_str = 'sphinx-apidoc -f -o _docs ' + _base_package_name
-            print apidoc_str
+            print(apidoc_str)
             os.system(apidoc_str)
 
         # Rebuilding documentation in html format
         file_system.remove_dir('docs')
         build_str = 'sphinx-build -b html _docs docs'
-        print build_str
+        print(build_str)
         os.system(build_str)
