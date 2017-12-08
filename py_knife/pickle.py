@@ -5,8 +5,12 @@ Pickle/Unpickle Functions
 ### INCLUDES ###
 import os
 import sys
-import cPickle
 import logging
+
+try:
+    import cPickle as pickle
+except:
+    import pickle
 
 from .file_system import open_file, write_file
 
@@ -27,17 +31,17 @@ def pickle_file(file_path, data_to_pickle):
     if file_instance is not None:
         file_name = os.path.basename(file_path)
         try:
-            pickled_data = cPickle.dumps(data_to_pickle)
+            pickled_data = pickle.dumps(data_to_pickle)
         except KeyboardInterrupt:
             # Retry
             # TODO: Might want to have several retries, not just single retry
             pickle_file(file_path, data_to_pickle)
         except TypeError as error:
-            LOGGER.error("Could not pickle " + file_name + "!")
-            LOGGER.error("Type Error Details: " + str(error))
+            LOGGER.error("Could not pickle '{}'!".format(file_name))
+            LOGGER.error('Type Error Details: {}'.format(error))
         except:
-            LOGGER.error("Could not pickle " + file_name + "!")
-            LOGGER.error("Pickler error:" + str(sys.exc_info()[0]))
+            LOGGER.error("Could not pickle '{}'!".format(file_name))
+            LOGGER.error('Pickler error: {}'.format(sys.exc_info()[0]))
         else:
             output = write_file(file_instance, pickled_data)
 
@@ -54,11 +58,11 @@ def unpickle_file(file_path):
     if file_instance is not None:
         pickled_data = file_instance.read()
         try:
-            unpickled_data = cPickle.loads(pickled_data)
+            unpickled_data = pickle.loads(pickled_data)
         except:
             file_name = os.path.basename(file_path)
-            LOGGER.error("Could not unpickle " + file_name + "!")
-            LOGGER.error("Unpickler error:" + str(sys.exc_info()[0]))
+            LOGGER.error("Could not unpickle '{}'!".format(file_name))
+            LOGGER.error('Unpickler error: {}'.format(sys.exc_info()[0]))
         else:
             output = unpickled_data
 
