@@ -52,6 +52,7 @@ setup(
     requires=[
         'pyserial',
         'pycrypto',
+        'pycryptodome',
         'pylint',
         'Sphinx',
         'serial'
